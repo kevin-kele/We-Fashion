@@ -15,14 +15,14 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name',5 ,100);
             $table->text('description');
-            $table->int('prix');
-            $table->string('taille');
+            $table->integer('price');
+            $table->string('size');
             $table->string('image');
-            $table->string('disponibilité');
-            $table->string('chaine');
-            $table->string('categorie');
+            $table->string('availability');
+            $table->string('reference');
+            $table->string('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
