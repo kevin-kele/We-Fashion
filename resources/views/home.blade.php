@@ -16,21 +16,24 @@
                             {{$article->description}}
                         </p>
                         <p class="card-text">
-                           prix: {{$article->price}}
+                           prix: {{$article->price}} €
                         </p>
                         <p class="card-text">
                             taille: {{$article->size}}
                          </p>
-                         @if($article->availability =="en solde")
+                         @if($article->availabilty =="en solde")
                                 <p class="alert alert-danger col-3">
-                                    {{$article->availability}}
+                                    {{$article->availabilty}}
                                 </p>
                          @else
                          <p class="card-text">
-                            {{$article->availability}}
+                            {{$article->availabilty}}
                         </p>
                         @endif
                     </div>
+                    <a href="{{route('product',$article->slug)}}" class="btn btn-primary">
+                        Ajouter <i class="fas fa-feather-alt"></i>
+                    </a>
                 </div>
             </div>
             @endforeach

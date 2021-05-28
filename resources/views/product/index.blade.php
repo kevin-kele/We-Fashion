@@ -14,6 +14,7 @@
             <th scope="col">ID</th>
             <th scope="col">Titre</th>
             <th scope="col">taille</th>
+            <th scope="col">prix</th>
             <th scope="col">reference</th>
             <th scope="col">Action</th>
           </tr>
@@ -24,6 +25,7 @@
             <td>{{$article->id}}</td>
             <td>{{$article->name}}</td>
             <td>{{$article->size}}</td>
+            <td>{{$article->price}}€</td>
             <td>{{$article->reference}}</td>
             <td class='d-flex'> 
                 <a href="{{route('product.edit',$article->id)}}" class='btn btn-warning mx-3'> <i class="fas fa-edit"> editer</i></a>

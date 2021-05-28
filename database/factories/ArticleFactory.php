@@ -27,7 +27,7 @@ class ArticleFactory extends Factory
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
             'price'=> $this->faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 100),
             'size'=> $this->faker->randomElement(['xs','s','m','l','xl']),
-            'availability'=> $this->faker->randomElement(['en solde','standard']),
+            'availabilty'=> $this->faker->randomElement(['standard','en solde']),
             'reference'=> $this->faker->ean13(),
             // 'category_id'=> Categorie::find(rand(1, 2)),
             

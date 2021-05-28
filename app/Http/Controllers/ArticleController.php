@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
@@ -27,30 +28,33 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\ArticleRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        //
-    }
+        
+        // $validated = $request->validated(); 
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+
+         Article::create([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'price' =>$request->input('price'),
+            'size' =>$request->input('size'),
+            'availabilty' =>$request->input('availabilty'),
+            'reference' =>$request->input('reference'),
+            
+        ]);
+      return  redirect()->route('product.index')->with('success',"l'article à bien été sauvegarder");
     }
+ 
 
     /**
      * Show the form for editing the specified resource.
@@ -58,9 +62,11 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Article $article)
     {
-        //
+        return view('product.edit',[
+            'article'=>$article
+        ]);
     }
 
     /**
@@ -70,9 +76,17 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Article $article)
     {
-        //
+        $article->name = $request->input('name');
+        $article->description = $request->input('description');
+        $article->price = $request->input('price');
+        $article->size = $request->input('size');
+        $article->availabilty = $request->input('availabilty');
+        $article->reference = $request->input('reference');
+        $article->save();
+
+        return  redirect()->route('product.index')->with('success',"l'article à bien été modifier");
     }
 
     /**

@@ -14,4 +14,13 @@ class MainController extends Controller
             'articles' =>$articles,
         ]);
     }
+
+    public function show($slug)
+    {
+        // dd($article);
+        $article = Article::where('slug',$slug)->firstOrFail();
+        return view('product',[
+            'article' =>$article
+        ]);
+    }
 }

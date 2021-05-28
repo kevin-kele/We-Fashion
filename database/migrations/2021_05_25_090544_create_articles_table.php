@@ -20,9 +20,11 @@ class CreateArticlesTable extends Migration
             $table->integer('price');
             $table->string('size');
             // $table->string('image');
-            $table->string('availability');
+            $table->string('availabilty');
             $table->string('reference');
-            // $table->string('category_id')->references('id')->on('categories');
+            $table->string('slug')->nullable();
+            // $table->integer('type');
+            // 1 = homme ; 2 = femme ; 3 = les deux
             $table->timestamps();
         });
     }

@@ -17,7 +17,8 @@ use App\Http\Controllers\ArticleController;
 
 
 Route::get('/',[MainController::class,'home'])->name('articles');
-Route::get('/articles/{slug}',[ArticleController::class,'show'])->name('article');
+
+Route::get('/product/{product:slug}',[MainController::class,'show'])->name('product');
 
 Auth::routes();
 
