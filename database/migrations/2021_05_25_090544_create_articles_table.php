@@ -22,7 +22,7 @@ class CreateArticlesTable extends Migration
             // $table->string('image');
             $table->string('availability');
             $table->string('reference');
-            $table->string('category_id')->references('id')->on('categories');
+            // $table->string('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

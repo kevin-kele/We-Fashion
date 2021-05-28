@@ -15,10 +15,27 @@
             <a class="nav-link" href="#">Femme</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <ul class="navbar-nav ml-auto">
+          @if(Auth::user())
+          @if(Auth::user()->role=="admin")
+          <li class="nav-item active">
+            <a class="nav-link" href="{{route('product.index')}}">Mon espace admin
+            </a>
+          </li>
+          @endif
+          <li class="nav-item">
+            <form action="{{ route('logout')}}" method="POST">
+              @csrf
+              <button type="submit" class='btn'>Déconnexion</button>
+            </form>
+          </li>
+          @else
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Connexion
+            </a>
+          </li>
+          @endif
+        </ul>
       </div>
     </div>
   </nav>

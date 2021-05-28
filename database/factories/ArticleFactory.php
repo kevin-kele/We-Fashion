@@ -23,13 +23,13 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->text($maxNbChars = 5),
-            'description' => $this->faker->paragraph(),
-            'price'=> $this->faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
+            'name' => $this->faker->text($maxNbChars = 8),
+            'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+            'price'=> $this->faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 100),
             'size'=> $this->faker->randomElement(['xs','s','m','l','xl']),
             'availability'=> $this->faker->randomElement(['en solde','standard']),
             'reference'=> $this->faker->ean13(),
-            'category_id'=> Categorie::find(rand(1, 2)),
+            // 'category_id'=> Categorie::find(rand(1, 2)),
             
             // 'image' => $this->faker->image('public/storage/images',640,480, null, false),
 
