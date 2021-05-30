@@ -1,5 +1,5 @@
 
-<footer class="bd-footer py-5 mt-5 bg-light">
+<footer class="bd-footer bg-light">
     <div class="container py-5">
       <div class="row">
         <div class="col-6 col-lg-4 mb-3">
@@ -15,15 +15,15 @@
             <ul class="list-unstyled">
                 <li class="mb-2"><a href="#">Contactez-nous </a></li>
                 <li class="mb-2"><a href="#">Livraison & Retour</a></li>
-                <li class="mb-2"><a href="#"></a>Conditions de vente</li> 
+                <li class="mb-2"><a href="#">Conditions de vente</a></li> 
             </ul>
           </div>
           <div class="col-6 col-lg-4 mb-3">
             <h5>réseaux sociaux</h5>
             <ul class="list-unstyled">
-                <li class="mb-2"><a href="#">facebook</a></li> 
-                <li class="mb-2"><a href="#">instagram</a></li>
-                <li class="mb-2"><a href="#">inscrivez vous à la newsletter</a></li>
+                <li class="mb-2"><i class="fab fa-facebook-square"><a href="#">facebook</a></i></li> 
+                <li class="mb-2"><i class="fab fa-instagram"><a href="#">instagram</a> </i></li>
+                <li class="mb-2"> <i class="far fa-envelope"><a href="#">inscrivez vous à la newsletter</a></i></li>
             </ul>
           </div>
       </div>

@@ -13,10 +13,10 @@
                            <img width="250" class="card-img-top" height="380" src="{{asset($article->image)}}"> 
                         </h5>
                         <h5 class="card-title text-center">
-                            {{$article->name}}
+                            {!!$article->name!!}
                         </h5>
                         <p class="card-text">
-                            {{$article->description}}
+                            {!!$article->description!!}
                         </p>
                         <p class="card-text">
                            prix: {{$article->price}} €
