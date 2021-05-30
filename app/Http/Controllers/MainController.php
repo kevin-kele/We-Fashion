@@ -15,6 +15,21 @@ class MainController extends Controller
         ]);
     }
 
+    public function hommes(){
+        $articles = Article::paginate(4);
+        
+        return view('hommes',[
+            'articles' =>$articles,
+        ]);
+    }
+
+    public function femmes(){
+        $articles = Article::paginate(4);
+        return view('femmes',[
+            'articles' =>$articles,
+        ]);
+    }
+
     public function show($slug)
     {
         // dd($article);

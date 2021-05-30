@@ -6,6 +6,7 @@
         <h1 class='display-3 text-center'>Articles</h1>
         <div class="articles row justify-content-center">
             @foreach($articles as $article)
+            @if($article->category == 2)
             <div class="col-md-4">
                 <div class="card my-3 " >
                     <div class="card-body">
@@ -39,6 +40,7 @@
                     </a>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
         <div class="d-flex justify-content-center mt-5">
