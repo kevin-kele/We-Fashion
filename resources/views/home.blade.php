@@ -10,6 +10,9 @@
                 <div class="card my-3 " >
                     <div class="card-body">
                         <h5 class="card-title text-center">
+                           <img width="250" height="250" src="{{asset($article->image)}}"> 
+                        </h5>
+                        <h5 class="card-title text-center">
                             {{$article->name}}
                         </h5>
                         <p class="card-text">

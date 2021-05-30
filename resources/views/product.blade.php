@@ -1,20 +1,18 @@
 @extends('base')
 
 @section('content')
-   
-    <div class="jumbotron">
-        <h2 class="display-4 text-center">{{$article->name}}</h2>
-        <div class="container">
-        <p class="text-center">
-            {!!$article->description!!}
-        </p>
+    <div class="mx-auto my-5 card" style="width: 20rem;">
+        <img class="card-img-top" width="250" height="250" src="{{asset($article->image)}}">
+        <div class="card-body">
+          <h5 class="card-title">{{$article->name}}</h5>
+          <p class="card-text">{{!!$article->description!!}}</p>
+        </div>
         <div class="d-flex justify-content-center my-5">
             <a href="{{route('articles')}}" class="btn btn-primary">
             <i class="fas fa-reply-all"></i>
             Retour
             </a>
         </div>
-    </div>
-    </div>
+      </div>
     
 @endsection
